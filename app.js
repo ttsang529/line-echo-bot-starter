@@ -18,6 +18,12 @@ app.post('/', function (req, res) {
     let body  = req.body
     let text  = body.events[0].message.text
     let replyToken = body.events[0].replyToken
+    if (text =="你叫什麼名字"){
+        text="曾威明" 
+    }else if(text =="你的信箱"){
+        text="ttsang529@gmail.com"
+    }
+    
     sendMessage(replyToken, text)
     console.log(JSON.stringify(body,null,2))
     res.send('')
